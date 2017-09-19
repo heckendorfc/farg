@@ -1,0 +1,11 @@
+A wrapper to send data over stdin to utilities that don't use stdin. It's
+similar xargs but it stores the data in a temp file rather than pass the data
+directly as command line arguments.
+
+farg geeqie < image.png
+This command reads reads image.png on stdin, writes it to a temp file, and
+calls geeqie with the temp file as an argument.
+
+A more realistic use case is with mutt's pipe-entry. Attachments can be opened
+in geeqie using:
+|farg geeqie
